@@ -17,8 +17,8 @@ There are 2 types of tasks
 ./Annotations
 - Download annotations file from [here](https://filebox.ece.vt.edu/~cvmlp/vqa//annotations.zip), extract them and place in this folder.
 - After download and extraction, this folder should have the following 2 files  
-- OpenEnded_mscoco_train2014.json (QA Annotation File for Open Ended Task)
-- MultipleChoice_mscoco_train2014.json (QA Annotation File for Multiple Choice Task)
+	- OpenEnded_mscoco_train2014.json (QA Annotation File for Open Ended Task)
+	- MultipleChoice_mscoco_train2014.json (QA Annotation File for Multiple Choice Task)
 
 ./Images
 - Download Training images from [MSCOCO website](http://mscoco.org/dataset/#download) and place here after extracting
