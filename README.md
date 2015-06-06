@@ -15,6 +15,7 @@ There are 2 types of tasks
 
 ## Files ##
 ./Annotations
+- Download annotations file from [VQA dataset page](http://visualqa.org/dataset) and place the json file in this folder. This  
 - OpenEnded_mscoco_train2014.json (QA Annotation File for Open Ended Task)
 - MultipleChoice_mscoco_train2014.json (QA Annotation File for Multiple Choice Task)
 
