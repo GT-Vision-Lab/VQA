@@ -23,8 +23,8 @@ class VQAEval:
 			res[quesId] = self.vqaRes.qa[quesId]
 		
 		# =================================================
-        # Compute accuracy
-        # =================================================
+		# Compute accuracy
+		# =================================================
 		accQA       = []
 		accQuesType = {}
 		accAnsType  = {}
