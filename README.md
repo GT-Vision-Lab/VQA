@@ -35,7 +35,7 @@ There are 2 types of tasks
 
 ./Results
 - OpenEnded_mscoco_train2014_fake_results.json (an example of fake results for running demo)
-- Visit [VQA Evaluation Page] (http://visualqa.org/evaluate) page for more details.
+- Visit [VQA evaluation page] (http://visualqa.org/evaluate) page for more details.
 
 ## References ##
 - [VQA: Visual Question Answering](http://visualqa.org/)
@@ -44,7 +44,7 @@ There are 2 types of tasks
 ## Developers ##
 - Aishwarya Agrawal (Virginia Tech)
 - Code for API is based on [MSCOCO API code](https://github.com/pdollar/coco)
-- The format of the code for Evaluation is based on [MSCOCO evaluation code](https://github.com/tylin/coco-caption)
+- The format of the code for evaluation is based on [MSCOCO evaluation code](https://github.com/tylin/coco-caption)
 
 ## Acknowledgement ##
 - VQA Team
