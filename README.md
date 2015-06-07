@@ -29,7 +29,7 @@ There are two types of tasks
 - vqaTools (API to read and visualize data)
 
 ./PythonEvaluationTools
-- This directory contains the Python evaluation codes
+- This directory contains the Python evaluation code
 - vqaEvalDemo.py (evaluation demo script)
 - vqaEvaluation (evaluation code)
 
