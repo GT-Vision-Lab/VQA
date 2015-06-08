@@ -6,7 +6,7 @@ import random
 import skimage.io as io
 import matplotlib.pyplot as plt
 
-dataDir='../../../VQA'
+dataDir='../../VQA'
 taskType='OpenEnded'
 dataType='mscoco'
 dataSubType='train2014'
