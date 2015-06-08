@@ -1,8 +1,8 @@
 # coding: utf-8
 
 import sys
-dataDir = '../../../VQA'
-sys.path.insert(0, '%s/HelperTools/PythonTools/vqaTools' %(dataDir))
+dataDir = '../../VQA'
+sys.path.insert(0, '%s/PythonHelperTools/vqaTools' %(dataDir))
 from vqa import VQA
 from vqaEvaluation.vqaEval import VQAEval
 import matplotlib.pyplot as plt
