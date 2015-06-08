@@ -39,7 +39,7 @@ There are two types of tasks
 
 ## References ##
 - [VQA: Visual Question Answering](http://visualqa.org/)
-- [Microsoft COCO](http://mscoco.org/dataset/#download)
+- [Microsoft COCO](http://mscoco.org/)
 
 ## Developers ##
 - Aishwarya Agrawal (Virginia Tech)
