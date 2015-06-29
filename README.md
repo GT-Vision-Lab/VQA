@@ -35,7 +35,7 @@ There are two types of tasks
 
 ./Results
 - OpenEnded_mscoco_train2014_fake_results.json (an example of a fake results file to run the demo)
-- Visit [VQA evaluation page] (http://visualqa.org/evaluate) page for more details.
+- Visit [VQA evaluation page] (http://visualqa.org/evaluation) page for more details.
 
 ## References ##
 - [VQA: Visual Question Answering](http://visualqa.org/)
