@@ -21,7 +21,7 @@ There are two types of tasks
 	- MultipleChoice_mscoco_train2014.json (VQA Annotation File for the Multiple Choice Task)
 
 ./Images
-- Download Training images from the [MSCOCO website](http://mscoco.org/dataset/#download) and place them here after extracting
+- Download Training images from [MSCOCO website](http://mscoco.org/dataset/#download) and place them here after extracting
 
 ./PythonHelperTools
 - This directory contains the Python API to read and visualize the VQA dataset
