@@ -1,14 +1,14 @@
-Python API and Evaluation Code for Beta v0.9 sample of the VQA dataset.
+Python API and Evaluation Code for Beta v0.9 release of the VQA dataset.
 ===================
 
-This sample of the dataset consists of
-- 82783 images from COCO training images and 40504 images from COCO validation images
+This release of the dataset consists of
+- 82783 COCO training images and 40504 COCO validation images
 - 248349 questions for training and 121512 questions for validation (3 per image)
 - 2483490 answers for training and 1215120 answers for validation (10 per question)
 
 There are two types of tasks
-- Open Ended Task (Questions are open ended)
-- Multiple Choice Task (Each question has 18 choices from which the correct answer is to be selected)
+- Open-ended task
+- Multiple-choice task (18 choices per question)
 
 ## Requirements ##
 - python 2.7
@@ -17,11 +17,11 @@ There are two types of tasks
 ./Annotations
 - Download annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations.zip), extract them and place in this folder.
 - After download and extraction, this folder should have the following two files  
-	- OpenEnded_mscoco_train2014.json (VQA Training Annotation File for the Open Ended Task)
-	- OpenEnded_mscoco_val2014.json (VQA Validation Annotation File for the Open Ended Task)
-	- MultipleChoice_mscoco_train2014.json (VQA Training Annotation File for the Multiple Choice Task)
-	- MultipleChoice_mscoco_val2014.json (VQA Validation Annotation File for the Multiple Choice Task)
-- Annotations files from Beta v0.1 Release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
+	- OpenEnded_mscoco_train2014.json
+	- OpenEnded_mscoco_val2014.json
+	- MultipleChoice_mscoco_train2014.json
+	- MultipleChoice_mscoco_val2014.json 
+- Annotations files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
 
 ./Images
 - Create a directory with name train2014, download training images from [MSCOCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
