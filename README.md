@@ -2,7 +2,7 @@ Python API and Evaluation Code for Beta v0.9 release of the VQA dataset.
 ===================
 
 This release of the dataset consists of
-- 82783 COCO training images and 40504 COCO validation images
+- 82783 MS COCO training images and 40504 MS COCO validation images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
 - 248349 questions for training and 121512 questions for validation (3 per image)
 - 2483490 answers for training and 1215120 answers for validation (10 per question)
 
@@ -26,8 +26,8 @@ There are two types of tasks
 - Annotations files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
 
 ./Images
-- Create a directory with name train2014, download training images from [MSCOCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
-- Create a directory with name val2014, download validation images from [MSCOCO website](http://mscoco.org/dataset/#download), place validation images in val2014 folder after extracting
+- Create a directory with name train2014, download training images from [MS COCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
+- Create a directory with name val2014, download validation images from [MS COCO website](http://mscoco.org/dataset/#download), place validation images in val2014 folder after extracting
 
 ./PythonHelperTools
 - This directory contains the Python API to read and visualize the VQA dataset
