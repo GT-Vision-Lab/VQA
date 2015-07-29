@@ -5,13 +5,14 @@ from vqaTools.vqa import VQA
 import random
 import skimage.io as io
 import matplotlib.pyplot as plt
+import os
 
 dataDir='../../VQA'
 taskType='OpenEnded'
 dataType='mscoco'
 dataSubType='train2014'
 annFile='%s/Annotations/%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType)
-imgDir = '%s/Images/' %(dataDir)
+imgDir = '%s/Images/%s/' %(dataDir, dataSubType)
 
 # initialize VQA api for QA annotations
 vqa=VQA(annFile)
@@ -45,11 +46,12 @@ anns = vqa.loadQA(annIds)
 randomAnn = random.choice(anns)
 vqa.showQA([randomAnn])
 imgId = randomAnn['image_id']
-imgFilename = 'COCO_train2014_'+ str(imgId).zfill(12) + '.jpg'
-I = io.imread(imgDir + imgFilename)
-plt.imshow(I)
-plt.axis('off')
-plt.show()
+imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
+if os.path.isfile(imgDir + imgFilename):
+	I = io.imread(imgDir + imgFilename)
+	plt.imshow(I)
+	plt.axis('off')
+	plt.show()
 
 # load and display QA annotations for given answer types
 """
@@ -63,11 +65,12 @@ anns = vqa.loadQA(annIds)
 randomAnn = random.choice(anns)
 vqa.showQA([randomAnn])
 imgId = randomAnn['image_id']
-imgFilename = 'COCO_train2014_'+ str(imgId).zfill(12) + '.jpg'
-I = io.imread(imgDir + imgFilename)
-plt.imshow(I)
-plt.axis('off')
-plt.show()
+imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
+if os.path.isfile(imgDir + imgFilename):
+	I = io.imread(imgDir + imgFilename)
+	plt.imshow(I)
+	plt.axis('off')
+	plt.show()
 
 # load and display QA annotations for given images
 """
@@ -80,9 +83,10 @@ anns = vqa.loadQA(annIds)
 randomAnn = random.choice(anns)
 vqa.showQA([randomAnn])  
 imgId = randomAnn['image_id']
-imgFilename = 'COCO_train2014_'+ str(imgId).zfill(12) + '.jpg'
-I = io.imread(imgDir + imgFilename)
-plt.imshow(I)
-plt.axis('off')
-plt.show()
+imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
+if os.path.isfile(imgDir + imgFilename):
+	I = io.imread(imgDir + imgFilename)
+	plt.imshow(I)
+	plt.axis('off')
+	plt.show()
 

@@ -9,13 +9,14 @@ import matplotlib.pyplot as plt
 import skimage.io as io
 import json
 import random
+import os
 
 # set up file names and paths
 taskType    ='OpenEnded'
 dataType    ='mscoco'
-dataSubType ='train2014'
+dataSubType ='val2014'
 annFile     ='%s/Annotations/%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType)
-imgDir      ='%s/Images/' %(dataDir)
+imgDir      ='%s/Images/%s/' %(dataDir, dataSubType)
 resultType  ='fake'
 fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType'] 
 [resFile, accuracyFile, evalQAFile, evalQuesTypeFile, evalAnsTypeFile] = ['%s/Results/%s_%s_%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType, \
@@ -55,12 +56,12 @@ ann = vqaRes.loadQA(randomEval)[0]
 print "Answer:   %s\n" %(ann['answer'])
 
 imgId = randomAnn[0]['image_id']
-print imgId
-imgFilename = 'COCO_train2014_'+ str(imgId).zfill(12) + '.jpg'
-I = io.imread(imgDir + imgFilename)
-plt.imshow(I)
-plt.axis('off')
-plt.show()
+imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
+if os.path.isfile(imgDir + imgFilename):
+	I = io.imread(imgDir + imgFilename)
+	plt.imshow(I)
+	plt.axis('off')
+	plt.show()
 
 # plot accuracy for various question types
 plt.bar(range(len(vqaEval.accuracy['perQuestionType'])), vqaEval.accuracy['perQuestionType'].values(), align='center')

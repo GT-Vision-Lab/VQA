@@ -1,10 +1,10 @@
-Python API and Evaluation Code for Beta v0.1 sample of the VQA dataset.
+Python API and Evaluation Code for Beta v0.9 sample of the VQA dataset.
 ===================
 
 This sample of the dataset consists of
-- 10k images from COCO training images
-- 30k questions (3 per image)
-- 300k answers (10 per question)
+- 82783 images from COCO training images and 40504 images from COCO validation images
+- 248349 questions for training and 121512 questions for validation (3 per image)
+- 2483490 answers for training and 1215120 answers for validation (10 per question)
 
 There are two types of tasks
 - Open Ended Task (Questions are open ended)
@@ -15,13 +15,17 @@ There are two types of tasks
 
 ## Files ##
 ./Annotations
-- Download annotations files from [here](https://filebox.ece.vt.edu/~cvmlp/vqa//annotations.zip), extract them and place in this folder.
+- Download annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations.zip), extract them and place in this folder.
 - After download and extraction, this folder should have the following two files  
-	- OpenEnded_mscoco_train2014.json (VQA Annotation File for the Open Ended Task)
-	- MultipleChoice_mscoco_train2014.json (VQA Annotation File for the Multiple Choice Task)
+	- OpenEnded_mscoco_train2014.json (VQA Training Annotation File for the Open Ended Task)
+	- OpenEnded_mscoco_val2014.json (VQA Validation Annotation File for the Open Ended Task)
+	- MultipleChoice_mscoco_train2014.json (VQA Training Annotation File for the Multiple Choice Task)
+	- MultipleChoice_mscoco_val2014.json (VQA Validation Annotation File for the Multiple Choice Task)
+- Annotations files from Sample Release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
 
 ./Images
-- Download Training images from [MSCOCO website](http://mscoco.org/dataset/#download) and place them here after extracting
+- Create a directory with name train2014, download training images from [MSCOCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
+- Create a directory with name val2014, download validation images from [MSCOCO website](http://mscoco.org/dataset/#download), place validation images in val2014 folder after extracting
 
 ./PythonHelperTools
 - This directory contains the Python API to read and visualize the VQA dataset
