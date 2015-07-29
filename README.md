@@ -12,6 +12,8 @@ There are two types of tasks
 
 ## Requirements ##
 - python 2.7
+- scikit-image (visit [this page](http://scikit-image.org/docs/dev/install.html) for installation)
+- matplotlib (visit [this page](http://matplotlib.org/users/installing.html) for installation)
 
 ## Files ##
 ./Annotations
