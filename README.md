@@ -21,7 +21,7 @@ There are two types of tasks
 	- OpenEnded_mscoco_val2014.json (VQA Validation Annotation File for the Open Ended Task)
 	- MultipleChoice_mscoco_train2014.json (VQA Training Annotation File for the Multiple Choice Task)
 	- MultipleChoice_mscoco_val2014.json (VQA Validation Annotation File for the Multiple Choice Task)
-- Annotations files from Sample Release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
+- Annotations files from Beta v0.1 Release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
 
 ./Images
 - Create a directory with name train2014, download training images from [MSCOCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
