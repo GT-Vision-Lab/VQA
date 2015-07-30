@@ -44,14 +44,15 @@ for ansType in vqaEval.accuracy['perAnswerType']:
 	print "%s : %.02f" %(ansType, vqaEval.accuracy['perAnswerType'][ansType])
 print "\n"
 # demo how to use evalQA to retrieve low score result
-evals = [quesId for quesId in vqaEval.evalQA if vqaEval.evalQA[quesId]<25]   #25 is per question percentage accuracy
+evals = [quesId for quesId in vqaEval.evalQA if vqaEval.evalQA[quesId]<35]   #35 is per question percentage accuracy
 print 'ground truth answers'
 randomEval = random.choice(evals)
+print randomEval
 randomAnn = vqa.loadQA(randomEval)
 vqa.showQA(randomAnn)
 
 print '\n'
-print 'generated answer (accuracy %0.2f)'%(vqaEval.evalQA[randomEval])
+print 'generated answer (accuracy %.02f)'%(vqaEval.evalQA[randomEval])
 ann = vqaRes.loadQA(randomEval)[0]
 print "Answer:   %s\n" %(ann['answer'])
 
