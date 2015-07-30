@@ -21,7 +21,7 @@ resultType  ='fake'
 fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType'] 
 
 # The example result json file in the './Results' folder consists of ten questions only.  
-# To get a fake results file for all questions in training dataset and to run the demo for that results file, uncomment following 3 lines.
+# To get a fake results file for all questions in training dataset and to run the demo for that results file, uncomment following 3 lines:
 
 #directory = '%s/Results/' %(dataDir)
 #url = 'https://vision.ece.vt.edu/vqa/data/July_Release/Results/OpenEnded_mscoco_train2014_fake_results.json'
