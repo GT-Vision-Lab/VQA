@@ -17,7 +17,7 @@ There are two types of tasks
 
 ## Files ##
 ./Annotations
-- Download annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations.zip), extract them and place in this folder.
+- Download training annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Train.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Val.zip), extract them and place in this folder.
 - After download and extraction, this folder should have the following four files  
 	- OpenEnded_mscoco_train2014.json
 	- OpenEnded_mscoco_val2014.json

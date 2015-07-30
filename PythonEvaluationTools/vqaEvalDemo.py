@@ -24,7 +24,7 @@ fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType']
 # To get a fake results file for all questions in training dataset and to run the demo for that results file, uncomment following 3 lines.
 
 #directory = '%s/Results/' %(dataDir)
-#url = 'https://vision.ece.vt.edu/vqa/data/July_Release/Annotations/OpenEnded_mscoco_train2014_fake_results.json'
+#url = 'https://vision.ece.vt.edu/vqa/data/July_Release/Results/OpenEnded_mscoco_train2014_fake_results.json'
 #os.system('wget --directory-prefix ' + directory + ' ' + url)
 
 [resFile, accuracyFile, evalQAFile, evalQuesTypeFile, evalAnsTypeFile] = ['%s/Results/%s_%s_%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType, \
