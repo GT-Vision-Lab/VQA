@@ -14,7 +14,7 @@ import os
 # set up file names and paths
 taskType    ='OpenEnded'
 dataType    ='mscoco'
-dataSubType ='val2014'
+dataSubType ='train2014'
 annFile     ='%s/Annotations/%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType)
 imgDir      ='%s/Images/%s/' %(dataDir, dataSubType)
 resultType  ='fake'
