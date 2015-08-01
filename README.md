@@ -23,7 +23,7 @@ There are two types of tasks
 	- MultipleChoice_mscoco_train2014_questions.json
     - OpenEnded_mscoco_val2014_questions.json
 	- MultipleChoice_mscoco_val2014_questions.json
-- Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip).
+- Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/Questions_Train_mscoco.zip).
 
 ./Annotations
 - Download training annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Train_mscoco.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Val_mscoco.zip), extract them and place in this folder.
