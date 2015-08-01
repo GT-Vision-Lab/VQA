@@ -16,14 +16,21 @@ There are two types of tasks
 - matplotlib (visit [this page](http://matplotlib.org/users/installing.html) for installation)
 
 ## Files ##
+./Input Questions
+- Download training question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Val_mscoco.zip), extract them and place in this folder.
+- After download and extraction, this folder should have the following four files 
+    - OpenEnded_mscoco_train2014_questions.json
+	- MultipleChoice_mscoco_train2014_questions.json
+    - OpenEnded_mscoco_val2014_questions.json
+	- MultipleChoice_mscoco_val2014_questions.json
+- Input question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip).
+
 ./Annotations
-- Download training annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Train.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Val.zip), extract them and place in this folder.
-- After download and extraction, this folder should have the following four files  
-	- OpenEnded_mscoco_train2014.json
-	- OpenEnded_mscoco_val2014.json
-	- MultipleChoice_mscoco_train2014.json
-	- MultipleChoice_mscoco_val2014.json 
-- Annotations files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/annotations.zip).
+- Download training annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Train_mscoco.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Val_mscoco.zip), extract them and place in this folder.
+- After download and extraction, this folder should have the following two files  
+	- mscoco_train2014_annotations.json
+	- mscoco_val2014_annotations.json
+- Annotation files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/Annotations_Train_mscoco.zip).
 
 ./Images
 - Create a directory with name train2014, download training images from [MS COCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting

@@ -21,7 +21,7 @@ import datetime
 import copy
 
 class VQA:
-	def __init__(self, annotation_file=None):
+	def __init__(self, annotation_file=None, question_file=None):
 		"""
        	Constructor of VQA helper class for reading and visualizing questions and answers.
         :param annotation_file (str): location of VQA annotation file
@@ -29,29 +29,36 @@ class VQA:
 		"""
         # load dataset
 		self.dataset = {}
+		self.questions = {}
 		self.qa = {}
+		self.qqa = {}
 		self.imgToQA = {}
-		if not annotation_file == None:
-			print 'loading VQA annotations into memory...'
+		if not annotation_file == None and not question_file == None:
+			print 'loading VQA annotations and questions into memory...'
 			time_t = datetime.datetime.utcnow()
 			dataset = json.load(open(annotation_file, 'r'))
+			questions = json.load(open(question_file, 'r'))
 			print datetime.datetime.utcnow() - time_t
 			self.dataset = dataset
+			self.questions = questions
 			self.createIndex()
 
 	def createIndex(self):
         # create index
 		print 'creating index...'
  		imgToQA = {ann['image_id']: [] for ann in self.dataset['annotations']}
-		qa =    {ann['question_id']:       [] for ann in self.dataset['annotations']}
+		qa =  {ann['question_id']:       [] for ann in self.dataset['annotations']}
+		qqa = {ann['question_id']:       [] for ann in self.dataset['annotations']}
  		for ann in self.dataset['annotations']:
 			imgToQA[ann['image_id']] += [ann]
 			qa[ann['question_id']] = ann
-  
+		for ques in self.questions['questions']:
+  			qqa[ques['question_id']] = ques
 		print 'index created!'
 
  		# create class members
  		self.qa = qa
+		self.qqa = qqa
  		self.imgToQA = imgToQA
 
 	def info(self):
@@ -130,35 +137,38 @@ class VQA:
 		if len(anns) == 0:
 			return 0
 		for ann in anns:
-			print "Question: %s" %(ann['question'])
+			quesId = ann['question_id']
+			print "Question: %s" %(self.qqa[quesId]['question'])
 			for ans in ann['answers']:
 				print "Answer %d: %s" %(ans['answer_id'], ans['answer'])
 		
-	def loadRes(self, resFile):
+	def loadRes(self, resFile, quesFile):
 		"""
 		Load result file and return a result object.
 		:param   resFile (str)     : file name of result file
 		:return: res (obj)         : result api object
 		"""
 		res = VQA()
-		res.dataset['info'] = copy.deepcopy(self.dataset['info'])
-		res.dataset['task_type'] = copy.deepcopy(self.dataset['task_type'])
-		res.dataset['data_type'] = copy.deepcopy(self.dataset['data_type'])
-		res.dataset['data_subtype'] = copy.deepcopy(self.dataset['data_subtype'])
-		res.dataset['license'] = copy.deepcopy(self.dataset['license'])
+		res.questions = json.load(open(quesFile))
+		res.dataset['info'] = copy.deepcopy(self.questions['info'])
+		res.dataset['task_type'] = copy.deepcopy(self.questions['task_type'])
+		res.dataset['data_type'] = copy.deepcopy(self.questions['data_type'])
+		res.dataset['data_subtype'] = copy.deepcopy(self.questions['data_subtype'])
+		res.dataset['license'] = copy.deepcopy(self.questions['license'])
 
 		print 'Loading and preparing results...     '
 		time_t = datetime.datetime.utcnow()
 		anns    = json.load(open(resFile))
-		assert type(anns) == list, 'results in not an array of objects'
+		assert type(anns) == list, 'results is not an array of objects'
 		annsQuesIds = [ann['question_id'] for ann in anns]
 		assert set(annsQuesIds) == (set(annsQuesIds) & set(self.getQuesIds())), \
 		'Results do not correspond to current VQA set'
 		for ann in anns:
 			quesId 			     = ann['question_id']
+			if res.dataset['task_type'] == 'Multiple Choice':
+				assert ann['answer'] in self.qqa[quesId]['multiple_choices'], 'predicted answer is not one of the multiple choices'
 			qaAnn                = self.qa[quesId]
 			ann['image_id']      = qaAnn['image_id'] 
-			ann['question']      = qaAnn['question']
 			ann['question_type'] = qaAnn['question_type']
 			ann['answer_type']   = qaAnn['answer_type']
 		print 'DONE (t=%0.2fs)'%((datetime.datetime.utcnow() - time_t).total_seconds())

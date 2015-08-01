@@ -15,7 +15,8 @@ import os
 taskType    ='OpenEnded'
 dataType    ='mscoco'
 dataSubType ='train2014'
-annFile     ='%s/Annotations/%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType)
+annFile     ='%s/Annotations/%s_%s_annotations.json'%(dataDir, dataType, dataSubType)
+quesFile    ='%s/Questions/%s_%s_%s_questions.json'%(dataDir, taskType, dataType, dataSubType)
 imgDir      ='%s/Images/%s/' %(dataDir, dataSubType)
 resultType  ='fake'
 fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType'] 
@@ -31,8 +32,8 @@ fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType']
 resultType, fileType) for fileType in fileTypes]  
 
 # create vqa object and vqaRes object
-vqa = VQA(annFile)
-vqaRes = vqa.loadRes(resFile)
+vqa = VQA(annFile, quesFile)
+vqaRes = vqa.loadRes(resFile, quesFile)
 
 # create vqaEval object by taking vqa and vqaRes
 vqaEval = VQAEval(vqa, vqaRes, n=2)   #n is precision of accuracy (number of places after decimal), default is 2
@@ -55,7 +56,6 @@ print "\n"
 evals = [quesId for quesId in vqaEval.evalQA if vqaEval.evalQA[quesId]<35]   #35 is per question percentage accuracy
 print 'ground truth answers'
 randomEval = random.choice(evals)
-print randomEval
 randomAnn = vqa.loadQA(randomEval)
 vqa.showQA(randomAnn)
 

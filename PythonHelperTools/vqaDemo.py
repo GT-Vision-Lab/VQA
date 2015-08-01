@@ -1,7 +1,6 @@
 # coding: utf-8
 
 from vqaTools.vqa import VQA
-#import numpy as np
 import random
 import skimage.io as io
 import matplotlib.pyplot as plt
@@ -11,11 +10,12 @@ dataDir='../../VQA'
 taskType='OpenEnded'
 dataType='mscoco'
 dataSubType='train2014'
-annFile='%s/Annotations/%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType)
+annFile='%s/Annotations/%s_%s_annotations.json'%(dataDir, dataType, dataSubType)
+quesFile='%s/Questions/%s_%s_%s_questions.json'%(dataDir, taskType, dataType, dataSubType)
 imgDir = '%s/Images/%s/' %(dataDir, dataSubType)
 
 # initialize VQA api for QA annotations
-vqa=VQA(annFile)
+vqa=VQA(annFile, quesFile)
 
 # load and display QA annotations for given question types
 """
