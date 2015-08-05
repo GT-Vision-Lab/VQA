@@ -17,7 +17,7 @@ There are two types of tasks
 
 ## Files ##
 ./Questions
-- Download training question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Val_mscoco.zip), extract them and place in this folder.
+- Download training question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip) and validation question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Val_mscoco.zip), extract them and place in this folder.
 - After download and extraction, this folder should have the following four files 
     - OpenEnded_mscoco_train2014_questions.json
 	- MultipleChoice_mscoco_train2014_questions.json
