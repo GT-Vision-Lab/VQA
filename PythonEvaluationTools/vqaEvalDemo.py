@@ -54,23 +54,24 @@ for ansType in vqaEval.accuracy['perAnswerType']:
 print "\n"
 # demo how to use evalQA to retrieve low score result
 evals = [quesId for quesId in vqaEval.evalQA if vqaEval.evalQA[quesId]<35]   #35 is per question percentage accuracy
-print 'ground truth answers'
-randomEval = random.choice(evals)
-randomAnn = vqa.loadQA(randomEval)
-vqa.showQA(randomAnn)
+if len(evals) > 0:
+	print 'ground truth answers'
+	randomEval = random.choice(evals)
+	randomAnn = vqa.loadQA(randomEval)
+	vqa.showQA(randomAnn)
 
-print '\n'
-print 'generated answer (accuracy %.02f)'%(vqaEval.evalQA[randomEval])
-ann = vqaRes.loadQA(randomEval)[0]
-print "Answer:   %s\n" %(ann['answer'])
+	print '\n'
+	print 'generated answer (accuracy %.02f)'%(vqaEval.evalQA[randomEval])
+	ann = vqaRes.loadQA(randomEval)[0]
+	print "Answer:   %s\n" %(ann['answer'])
 
-imgId = randomAnn[0]['image_id']
-imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
-if os.path.isfile(imgDir + imgFilename):
-	I = io.imread(imgDir + imgFilename)
-	plt.imshow(I)
-	plt.axis('off')
-	plt.show()
+	imgId = randomAnn[0]['image_id']
+	imgFilename = 'COCO_' + dataSubType + '_'+ str(imgId).zfill(12) + '.jpg'
+	if os.path.isfile(imgDir + imgFilename):
+		I = io.imread(imgDir + imgFilename)
+		plt.imshow(I)
+		plt.axis('off')
+		plt.show()
 
 # plot accuracy for various question types
 plt.bar(range(len(vqaEval.accuracy['perQuestionType'])), vqaEval.accuracy['perQuestionType'].values(), align='center')

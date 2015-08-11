@@ -16,7 +16,7 @@ class VQAEval:
 		self.evalAnsType  = {}
 		self.vqa 		  = vqa
 		self.vqaRes       = vqaRes
-		self.params		  = {'question_id': vqaRes.getQuesIds()}
+		self.params		  = {'question_id': vqa.getQuesIds()}
 		self.contractions = {"aint": "ain't", "arent": "aren't", "cant": "can't", "couldve": "could've", "couldnt": "couldn't", \
 							 "couldn'tve": "couldn’t’ve", "couldnt’ve": "couldn’t’ve", "didnt": "didn’t", "doesnt": "doesn’t", "dont": "don’t", "hadnt": "hadn’t", \
 							 "hadnt’ve": "hadn’t’ve", "hadn'tve": "hadn’t’ve", "hasnt": "hasn’t", "havent": "haven’t", "hed": "he’d", "hed’ve": "he’d’ve", \
