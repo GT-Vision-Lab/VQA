@@ -100,7 +100,7 @@ class VQAEval:
 				gtAcc.append(acc)
 			quesType    = gts[quesId]['question_type']
 			ansType     = gts[quesId]['answer_type']
-            avgGTAcc = float(sum(gtAcc))/len(gtAcc)
+			avgGTAcc = float(sum(gtAcc))/len(gtAcc)
 			accQA.append(avgGTAcc)
 			if quesType not in accQuesType:
 				accQuesType[quesType] = []
