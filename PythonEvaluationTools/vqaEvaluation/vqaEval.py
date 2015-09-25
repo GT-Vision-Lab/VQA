@@ -100,16 +100,17 @@ class VQAEval:
 				gtAcc.append(acc)
 			quesType    = gts[quesId]['question_type']
 			ansType     = gts[quesId]['answer_type']
-			accQA.append(float(sum(gtAcc))/len(gtAcc))
+            avgGTAcc = float(sum(gtAcc))/len(gtAcc)
+			accQA.append(avgGTAcc)
 			if quesType not in accQuesType:
 				accQuesType[quesType] = []
-			accQuesType[quesType].append(acc)
+			accQuesType[quesType].append(avgGTAcc)
 			if ansType not in accAnsType:
 				accAnsType[ansType] = []
-			accAnsType[ansType].append(acc)
-			self.setEvalQA(quesId, acc)
-			self.setEvalQuesType(quesId, quesType, acc)
-			self.setEvalAnsType(quesId, ansType, acc)
+			accAnsType[ansType].append(avgGTAcc)
+			self.setEvalQA(quesId, avgGTAcc)
+			self.setEvalQuesType(quesId, quesType, avgGTAcc)
+			self.setEvalAnsType(quesId, ansType, avgGTAcc)
 			if step%100 == 0:
 				self.updateProgress(step/float(len(quesIds)))
 			step = step + 1
