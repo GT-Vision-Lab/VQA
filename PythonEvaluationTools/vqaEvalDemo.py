@@ -39,7 +39,11 @@ vqaRes = vqa.loadRes(resFile, quesFile)
 vqaEval = VQAEval(vqa, vqaRes, n=2)   #n is precision of accuracy (number of places after decimal), default is 2
 
 # evaluate results
-vqaEval.evaluate()
+"""
+If you have a list of question ids on which you would like to evaluate your results, pass it as a list to below function
+By default it uses all the question ids in annotation file
+"""
+vqaEval.evaluate() 
 
 # print accuracies
 print "\n"
