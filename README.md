@@ -1,10 +1,15 @@
-Python API and Evaluation Code for Beta v0.9 release of the VQA dataset.
+Python API and Evaluation Code for v0.1 release of the VQA dataset.
 ===================
 
 This release of the dataset consists of
-- 82783 MS COCO training images and 40504 MS COCO validation images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
-- 248349 questions for training and 121512 questions for validation (3 per image)
-- 2483490 answers for training and 1215120 answers for validation (10 per question)
+- Real 
+	- 82,783 MS COCO training images, 40,504 MS COCO validation images and 81,434 MS COCO testing images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
+	- 248,349 questions for training, 121,512 questions for validation and 244,302 questions for testing (3 per image)
+	- 2,483,490 answers for training and 1,215,120 answers for validation (10 per question)
+- Abstract
+	- 20,000 training images, 10,000 validation images and 20,000 MS COCO testing images
+	- 60,000 questions for training, 30,000 questions for validation and 60,000 questions for testing (3 per image)
+	- 600,000 answers for training and 300,000 answers for validation (10 per question)
 
 There are two types of tasks
 - Open-ended task
@@ -17,24 +22,24 @@ There are two types of tasks
 
 ## Files ##
 ./Questions
-- Download training question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Train_mscoco.zip) and validation question files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Questions_Val_mscoco.zip), extract them and place in this folder.
-- After download and extraction, this folder should have the following four files 
-    - OpenEnded_mscoco_train2014_questions.json
-	- MultipleChoice_mscoco_train2014_questions.json
-    - OpenEnded_mscoco_val2014_questions.json
-	- MultipleChoice_mscoco_val2014_questions.json
-- Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/Questions_Train_mscoco.zip).
+- For real, download training question files from [here](http://visualqa.org/data/mscoco/vqa/Questions_Train_mscoco.zip), validation question files from [here](http://visualqa.org/data/mscoco/vqa/Questions_Val_mscoco.zip) and testing question files from [here] (http://visualqa.org/data/mscoco/vqa/Questions_Test_mscoco.zip), extract them and place in this folder.
+- For abstract, download training question files from [here](http://visualqa.org/data/abstract_v002/vqa/Questions_Train_abstract_v002.zip), validation question files from [here](http://visualqa.org/data/abstract_v002/vqa/Questions_Val_abstract_v002.zip) and testing question files from [here] (http://visualqa.org/data/abstract_v002/vqa/Questions_Test_abstract_v002.zip), extract them and place in this folder.
+- Question files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
+	- [training question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Train_mscoco.zip)
+	- [validation question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Val_mscoco.zip)
+- Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.1/Questions_Train_mscoco.zip).
 
 ./Annotations
-- Download training annotations files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Train_mscoco.zip) and validation annotation files from [here](https://vision.ece.vt.edu/vqa/data/July_Release/Annotations_Val_mscoco.zip), extract them and place in this folder.
-- After download and extraction, this folder should have the following two files  
-	- mscoco_train2014_annotations.json
-	- mscoco_val2014_annotations.json
-- Annotation files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](https://vision.ece.vt.edu/vqa/data/teaser_data/Annotations_Train_mscoco.zip).
+- For real, download training annotation files from [here](http://visualqa.org/data/mscoco/vqa/Annotations_Train_mscoco.zip) and validation annotation files from [here](http://visualqa.org/data/mscoco/vqa/Annotations_Val_mscoco.zip), extract them and place in this folder.
+- For abstract, download training annotation files from [here](http://visualqa.org/data/abstract_v002/vqa/Annotations_Train_abstract_v002.zip) and validation annotation files from [here](http://visualqa.org/data/abstract_v002/vqa/Annotations_Val_abstract_v002.zip), extract them and place in this folder.
+- Annotation files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
+	- [training annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Train_mscoco.zip)
+	- [validation annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Val_mscoco.zip)
+- Annotation files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.1/Annotations_Train_mscoco.zip).
 
 ./Images
-- Create a directory with name train2014, download training images from [MS COCO website](http://mscoco.org/dataset/#download), place training images in train2014 folder after extracting
-- Create a directory with name val2014, download validation images from [MS COCO website](http://mscoco.org/dataset/#download), place validation images in val2014 folder after extracting
+- For real, create a directory with name mscoco inside this directory. For each of train, val and test, create directories with names train2014, val2014 and test2015 respectively inside mscoco directory, download respective images from [MS COCO website](http://mscoco.org/dataset/#download) and place them in respective folders.
+- For abstract, create a directory with name abstract_v002 inside this directory. For each of train, val and test, create directories with names train2015, val2015 and test2015 respectively inside abstract_v002 directory, download respective images from [VQA download page](http://www.visualqa.org/download.html) and place them in respective folders.
 
 ./PythonHelperTools
 - This directory contains the Python API to read and visualize the VQA dataset
@@ -49,6 +54,10 @@ There are two types of tasks
 ./Results
 - OpenEnded_mscoco_train2014_fake_results.json (an example of a fake results file to run the demo)
 - Visit [VQA evaluation page] (http://visualqa.org/evaluation) for more details.
+
+./QuestionTypes
+- mscoco_question_types.txt
+- abstract_v002_question_types.txt
 
 ## References ##
 - [VQA: Visual Question Answering](http://visualqa.org/)
