@@ -56,6 +56,7 @@ There are two types of tasks
 - Visit [VQA evaluation page] (http://visualqa.org/evaluation) for more details.
 
 ./QuestionTypes
+- This directory contains the following lists of question types for both real and abstract questions. In a list, if there are question types of length n+k and length n with the same first n words, then the question type of length n does not include questions that belong to the question type of length n+k.
 - mscoco_question_types.txt
 - abstract_v002_question_types.txt
 
@@ -65,5 +66,5 @@ There are two types of tasks
 
 ## Developers ##
 - Aishwarya Agrawal (Virginia Tech)
-- Code for API is based on [MSCOCO API code](https://github.com/pdollar/coco)
-- The format of the code for evaluation is based on [MSCOCO evaluation code](https://github.com/tylin/coco-caption)
+- Code for API is based on [MSCOCO API code](https://github.com/pdollar/coco).
+- The format of the code for evaluation is based on [MSCOCO evaluation code](https://github.com/tylin/coco-caption).
