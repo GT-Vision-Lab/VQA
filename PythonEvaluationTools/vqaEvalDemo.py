@@ -17,7 +17,7 @@ dataType    ='mscoco'
 dataSubType ='train2014'
 annFile     ='%s/Annotations/%s_%s_annotations.json'%(dataDir, dataType, dataSubType)
 quesFile    ='%s/Questions/%s_%s_%s_questions.json'%(dataDir, taskType, dataType, dataSubType)
-imgDir      ='%s/Images/%s/' %(dataDir, dataSubType)
+imgDir      ='%s/Images/%s/%s/' %(dataDir, dataType, dataSubType)
 resultType  ='fake'
 fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType'] 
 
