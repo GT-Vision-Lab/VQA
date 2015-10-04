@@ -19,27 +19,7 @@ vqa=VQA(annFile, quesFile)
 
 # load and display QA annotations for given question types
 """
-quesTypes can be one of the following
-what color 
-what kind 
-what are 
-what type 
-is the 
-is this
-how many 
-are 
-does 
-where 
-is there 
-why 
-which 
-do 
-what does 
-what time 
-who 
-what sport 
-what animal 
-what brand
+All possible quesTypes for abstract and mscoco has been provided in respective text files in ../QuestionTypes/ folder.
 """
 annIds = vqa.getQuesIds(quesTypes='how many');   
 anns = vqa.loadQA(annIds)
