@@ -1,4 +1,4 @@
-Python API and Evaluation Code for v0.1 release of the VQA dataset.
+Python API and Evaluation Code for v1.0 release of the VQA dataset.
 ===================
 
 This release of the dataset consists of
@@ -22,16 +22,14 @@ There are two types of tasks
 
 ## Files ##
 ./Questions
-- For real, download training question files from [here](http://visualqa.org/data/mscoco/vqa/Questions_Train_mscoco.zip), validation question files from [here](http://visualqa.org/data/mscoco/vqa/Questions_Val_mscoco.zip) and testing question files from [here] (http://visualqa.org/data/mscoco/vqa/Questions_Test_mscoco.zip), extract them and place in this folder.
-- For abstract, download training question files from [here](http://visualqa.org/data/abstract_v002/vqa/Questions_Train_abstract_v002.zip), validation question files from [here](http://visualqa.org/data/abstract_v002/vqa/Questions_Val_abstract_v002.zip) and testing question files from [here] (http://visualqa.org/data/abstract_v002/vqa/Questions_Test_abstract_v002.zip), extract them and place in this folder.
+- For both real and abstract, download the question files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
 - Question files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
 	- [training question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Train_mscoco.zip)
 	- [validation question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Val_mscoco.zip)
 - Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.1/Questions_Train_mscoco.zip).
 
 ./Annotations
-- For real, download training annotation files from [here](http://visualqa.org/data/mscoco/vqa/Annotations_Train_mscoco.zip) and validation annotation files from [here](http://visualqa.org/data/mscoco/vqa/Annotations_Val_mscoco.zip), extract them and place in this folder.
-- For abstract, download training annotation files from [here](http://visualqa.org/data/abstract_v002/vqa/Annotations_Train_abstract_v002.zip) and validation annotation files from [here](http://visualqa.org/data/abstract_v002/vqa/Annotations_Val_abstract_v002.zip), extract them and place in this folder.
+- For both real and abstract, download the annotation files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
 - Annotation files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
 	- [training annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Train_mscoco.zip)
 	- [validation annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Val_mscoco.zip)
