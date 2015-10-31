@@ -162,7 +162,7 @@ class VQA:
 		assert type(anns) == list, 'results is not an array of objects'
 		annsQuesIds = [ann['question_id'] for ann in anns]
 		assert set(annsQuesIds) == set(self.getQuesIds()), \
-		'Results do not correspond to current VQA set. Either the results do have predictions for all question ids in annotation file or there is one/more questions id that does not belong to the question ids in the annotation file.'
+		'Results do not correspond to current VQA set. Either the results do not have predictions for all question ids in annotation file or there is one/more question id(s) that do(es) not belong to the question ids in the annotation file.'
 		for ann in anns:
 			quesId 			     = ann['question_id']
 			if res.dataset['task_type'] == 'Multiple Choice':
