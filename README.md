@@ -2,6 +2,7 @@ TODO: Modify Python API and Evaluation Code for v1.9 release of the VQA dataset.
 ===================
 Python API and Evaluation Code for v1.0 release of the VQA dataset.
 ===================
+
 This release of the dataset consists of
 - Real 
 	- 82,783 MS COCO training images, 40,504 MS COCO validation images and 81,434 MS COCO testing images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
