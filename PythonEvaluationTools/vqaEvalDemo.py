@@ -12,18 +12,19 @@ import random
 import os
 
 # set up file names and paths
-taskType    ='OpenEnded'
-dataType    ='mscoco'  # 'mscoco' for real and 'abstract_v002' for abstract
+versionType ='' # this should be 'v2_' when using VQA v2.0 dataset
+taskType    ='OpenEnded' # 'OpenEnded' only for v2.0. 'OpenEnded' or 'MultipleChoice' for v1.0
+dataType    ='mscoco'  # 'mscoco' only for v1.0. 'mscoco' for real and 'abstract_v002' for abstract for v1.0. 
 dataSubType ='train2014'
-annFile     ='%s/Annotations/%s_%s_annotations.json'%(dataDir, dataType, dataSubType)
-quesFile    ='%s/Questions/%s_%s_%s_questions.json'%(dataDir, taskType, dataType, dataSubType)
+annFile     ='%s/Annotations/%s%s_%s_annotations.json'%(dataDir, versionType, dataType, dataSubType)
+quesFile    ='%s/Questions/%s%s_%s_%s_questions.json'%(dataDir, versionType, taskType, dataType, dataSubType)
 imgDir      ='%s/Images/%s/%s/' %(dataDir, dataType, dataSubType)
 resultType  ='fake'
 fileTypes   = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType'] 
 
 # An example result json file has been provided in './Results' folder.  
 
-[resFile, accuracyFile, evalQAFile, evalQuesTypeFile, evalAnsTypeFile] = ['%s/Results/%s_%s_%s_%s_%s.json'%(dataDir, taskType, dataType, dataSubType, \
+[resFile, accuracyFile, evalQAFile, evalQuesTypeFile, evalAnsTypeFile] = ['%s/Results/%s%s_%s_%s_%s_%s.json'%(dataDir, versionType, taskType, dataType, dataSubType, \
 resultType, fileType) for fileType in fileTypes]  
 
 # create vqa object and vqaRes object
