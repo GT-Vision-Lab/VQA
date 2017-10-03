@@ -1,9 +1,17 @@
-TODO: Modify Python API and Evaluation Code for v1.9 release of the VQA dataset.
+Python API and Evaluation Code for v2.0 and v1.0 releases of the VQA dataset.
 ===================
-Python API and Evaluation Code for v1.0 release of the VQA dataset.
-===================
+## VQA v2.0 release ##
+This release consists of
+- Real 
+	- 82,783 MS COCO training images, 40,504 MS COCO validation images and 81,434 MS COCO testing images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
+	- 443,757 questions for training, 214,354 questions for validation and 447,793 questions for testing
+	- 4,437,570 answers for training and 2,143,540 answers for validation (10 per question)
 
-This release of the dataset consists of
+There is only one type of task
+- Open-ended task
+
+## VQA v1.0 release ##
+This release consists of
 - Real 
 	- 82,783 MS COCO training images, 40,504 MS COCO validation images and 81,434 MS COCO testing images (images are obtained from [MS COCO website] (http://mscoco.org/dataset/#download))
 	- 248,349 questions for training, 121,512 questions for validation and 244,302 questions for testing (3 per image)
@@ -24,14 +32,16 @@ There are two types of tasks
 
 ## Files ##
 ./Questions
-- For both real and abstract, download the question files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
+- For v2.0, download the question files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
+- For v1.0, both real and abstract, question files can be found on the [VQA v1 download page](http://www.visualqa.org/vqa_v1_download.html).
 - Question files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
 	- [training question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Train_mscoco.zip)
 	- [validation question files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Questions_Val_mscoco.zip)
 - Question files from Beta v0.1 release (10k MSCOCO images, 30k questions, 300k answers) can be found [here](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.1/Questions_Train_mscoco.zip).
 
 ./Annotations
-- For both real and abstract, download the annotation files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
+- For v2.0, download the annotations files from the [VQA download page](http://www.visualqa.org/download.html), extract them and place in this folder.
+- For v1.0, for both real and abstract, annotation files can be found on the [VQA v1 download page](http://www.visualqa.org/vqa_v1_download.html).
 - Annotation files from Beta v0.9 release (123,287 MSCOCO train and val images, 369,861 questions, 3,698,610 answers) can be found below
 	- [training annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Train_mscoco.zip)
 	- [validation annotation files](http://visualqa.org/data/mscoco/prev_rel/Beta_v0.9/Annotations_Val_mscoco.zip)
@@ -52,11 +62,11 @@ There are two types of tasks
 - vqaEvaluation (evaluation code)
 
 ./Results
-- OpenEnded_mscoco_train2014_fake_results.json (an example of a fake results file to run the demo)
+- OpenEnded_mscoco_train2014_fake_results.json (an example of a fake results file for v1.0 to run the demo)
 - Visit [VQA evaluation page] (http://visualqa.org/evaluation) for more details.
 
 ./QuestionTypes
-- This directory contains the following lists of question types for both real and abstract questions. In a list, if there are question types of length n+k and length n with the same first n words, then the question type of length n does not include questions that belong to the question type of length n+k.
+- This directory contains the following lists of question types for both real and abstract questions (question types are unchanged from v1.0 to v2.0). In a list, if there are question types of length n+k and length n with the same first n words, then the question type of length n does not include questions that belong to the question type of length n+k.
 - mscoco_question_types.txt
 - abstract_v002_question_types.txt
 
