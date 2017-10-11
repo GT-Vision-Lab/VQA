@@ -61,32 +61,32 @@ By default it uses all the question ids in annotation file
 vqaEval.evaluate()
 
 # print accuracies
-print "\n"
-print "Overall Accuracy is: %.02f\n" % (vqaEval.accuracy['overall'])
-print "Per Question Type Accuracy is the following:"
+print("\n")
+print("Overall Accuracy is: %.02f\n" % (vqaEval.accuracy['overall']))
+print("Per Question Type Accuracy is the following:")
 for quesType in vqaEval.accuracy['perQuestionType']:
-    print "%s : %.02f" % (
+    print("%s : %.02f" % (
         quesType,
         vqaEval.accuracy['perQuestionType'][quesType]
-        )
-print "\n"
-print "Per Answer Type Accuracy is the following:"
+        ))
+print("\n")
+print("Per Answer Type Accuracy is the following:")
 for ansType in vqaEval.accuracy['perAnswerType']:
-    print "%s : %.02f" % (ansType, vqaEval.accuracy['perAnswerType'][ansType])
-print "\n"
+    print("%s : %.02f" % (ansType, vqaEval.accuracy['perAnswerType'][ansType]))
+print("\n")
 # demo how to use evalQA to retrieve low score result
 # 35 is per question percentage accuracy
 evals = [quesId for quesId in vqaEval.evalQA if vqaEval.evalQA[quesId] < 35]
 if len(evals) > 0:
-    print 'ground truth answers'
+    print('ground truth answers')
     randomEval = random.choice(evals)
     randomAnn = vqa.loadQA(randomEval)
     vqa.showQA(randomAnn)
 
-    print '\n'
-    print 'generated answer (accuracy %.02f)' % (vqaEval.evalQA[randomEval])
+    print('\n')
+    print('generated answer (accuracy %.02f)' % (vqaEval.evalQA[randomEval]))
     ann = vqaRes.loadQA(randomEval)[0]
-    print "Answer:   %s\n" % (ann['answer'])
+    print("Answer:   %s\n" % (ann['answer']))
 
     imgId = randomAnn[0]['image_id']
     imgFilename = 'COCO_' + dataSubType + '_' + str(imgId).zfill(12) + '.jpg'
@@ -97,11 +97,11 @@ if len(evals) > 0:
         plt.show()
 
 # plot accuracy for various question types
-plt.bar(range(len(vqaEval.accuracy['perQuestionType'])),
-        vqaEval.accuracy['perQuestionType'].values(), align='center')
+plt.bar(list(range(len(vqaEval.accuracy['perQuestionType']))),
+        list(vqaEval.accuracy['perQuestionType'].values()), align='center')
 plt.xticks(
-    range(len(vqaEval.accuracy['perQuestionType'])),
-    vqaEval.accuracy['perQuestionType'].keys(),
+    list(range(len(vqaEval.accuracy['perQuestionType']))),
+    list(vqaEval.accuracy['perQuestionType'].keys()),
     rotation='0',
     fontsize=10,
 )

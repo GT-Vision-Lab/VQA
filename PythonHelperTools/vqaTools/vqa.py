@@ -40,18 +40,18 @@ class VQA:
         self.qqa = {}
         self.imgToQA = {}
         if annotation_file is not None and question_file is not None:
-            print 'loading VQA annotations and questions into memory...'
+            print('loading VQA annotations and questions into memory...')
             time_t = datetime.datetime.utcnow()
             dataset = json.load(open(annotation_file, 'r'))
             questions = json.load(open(question_file, 'r'))
-            print datetime.datetime.utcnow() - time_t
+            print(datetime.datetime.utcnow() - time_t)
             self.dataset = dataset
             self.questions = questions
             self.createIndex()
 
     def createIndex(self):
         # create index
-        print 'creating index...'
+        print('creating index...')
         imgToQA = {ann['image_id']: [] for ann in self.dataset['annotations']}
         qa = {ann['question_id']:       []
               for ann in self.dataset['annotations']}
@@ -62,7 +62,7 @@ class VQA:
             qa[ann['question_id']] = ann
         for ques in self.questions['questions']:
             qqa[ques['question_id']] = ques
-        print 'index created!'
+        print('index created!')
 
         # create class members
         self.qa = qa
@@ -76,7 +76,7 @@ class VQA:
             None
         """
         for key, value in self.datset['info'].items():
-            print '%s: %s' % (key, value)
+            print('%s: %s' % (key, value))
 
     def getQuesIds(self, imgIds=[], quesTypes=[], ansTypes=[]):
         """
@@ -163,9 +163,9 @@ class VQA:
             return 0
         for ann in anns:
             quesId = ann['question_id']
-            print "Question: %s" % (self.qqa[quesId]['question'])
+            print("Question: %s" % (self.qqa[quesId]['question']))
             for ans in ann['answers']:
-                print "Answer %d: %s" % (ans['answer_id'], ans['answer'])
+                print("Answer %d: %s" % (ans['answer_id'], ans['answer']))
 
     def loadRes(self, resFile, quesFile):
         """
@@ -184,7 +184,7 @@ class VQA:
             self.questions['data_subtype'])
         res.dataset['license'] = copy.deepcopy(self.questions['license'])
 
-        print 'Loading and preparing results...     '
+        print('Loading and preparing results...     ')
         time_t = datetime.datetime.utcnow()
         anns = json.load(open(resFile))
         assert type(anns) == list, 'results is not an array of objects'
@@ -203,8 +203,8 @@ class VQA:
             ann['image_id'] = qaAnn['image_id']
             ann['question_type'] = qaAnn['question_type']
             ann['answer_type'] = qaAnn['answer_type']
-        print 'DONE (t=%0.2fs)' % ((datetime.datetime.utcnow() -
-                                    time_t).total_seconds())
+        print('DONE (t=%0.2fs)' % ((datetime.datetime.utcnow() -
+                                    time_t).total_seconds()))
 
         res.dataset['annotations'] = anns
         res.createIndex()
