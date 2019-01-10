@@ -40,10 +40,13 @@ task = args.task
 data = args.data
 data_subtype = args.data_subtype
 
-ann_file = args.annotations or '{args.data_dir}/Annotations/{args.version}_{args.data}_{args.data_subtype}_annotations.json'.format(args=args)
-ques_file = args.questions or '{args.data_dir}/Questions/{args.version}_{args.task}_{args.data}_{args.data_subtype}_questions.json'.format(args=args)
+ann_file = args.annotations or '{args.data_dir}/Annotations/{args.version}_{args.data}_{args.data_subtype}_annotations.json'.format(
+    args=args)
+ques_file = args.questions or '{args.data_dir}/Questions/{args.version}_{args.task}_{args.data}_{args.data_subtype}_questions.json'.format(
+    args=args)
 
-img_dir = args.image_dir or '{args.data_dir}/Images/{args.data}/{args.data_subtype}/'.format(args=args)
+img_dir = args.image_dir or '{args.data_dir}/Images/{args.data}/{args.data_subtype}/'.format(
+    args=args)
 file_types = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType']
 
 # An example result json file has been provided in './Results' folder.
