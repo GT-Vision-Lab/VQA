@@ -48,10 +48,8 @@ class VQA:
         # create index
         print('creating index...')
         imgToQA = {ann['image_id']: [] for ann in self.dataset['annotations']}
-        qa = {ann['question_id']:       []
-              for ann in self.dataset['annotations']}
-        qqa = {ann['question_id']:       []
-               for ann in self.dataset['annotations']}
+        qa = {ann['question_id']: [] for ann in self.dataset['annotations']}
+        qqa = {ann['question_id']: [] for ann in self.dataset['annotations']}
         for ann in self.dataset['annotations']:
             imgToQA[ann['image_id']] += [ann]
             qa[ann['question_id']] = ann
@@ -69,7 +67,7 @@ class VQA:
         Print information about the VQA annotation file.
         :return:
         """
-        for key, value in self.datset['info'].items():
+        for key, value in self.dataset['info'].items():
             print('%s: %s' % (key, value))
 
     def getQuesIds(self, imgIds=[], quesTypes=[], ansTypes=[]):

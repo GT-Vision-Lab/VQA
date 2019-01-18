@@ -1,2 +1,2 @@
-from vqa.vqa import VQA
-from vqa.vqaEval import VQAEval
+from .vqa import VQA
+from .vqaEval import VQAEval

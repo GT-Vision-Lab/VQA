@@ -9,6 +9,7 @@ import json
 import random
 import os
 import argparse
+import pprint
 
 
 def parse_args():
@@ -18,7 +19,7 @@ def parse_args():
     parser.add_argument("--questions")
     parser.add_argument("--image_dir")
     parser.add_argument("--data_dir", default=".")
-    parser.add_argument("--version", default="v2_")
+    parser.add_argument("--version", default="v2")
     parser.add_argument("--task", default="OpenEnded")
     parser.add_argument("--data", default="mscoco")
     parser.add_argument("--data_subtype", default="val2014")
@@ -27,6 +28,8 @@ def parse_args():
 
 
 args = parse_args()
+
+pprint.pprint(vars(args))
 
 # set up file names and paths
 data_dir = args.data_dir
@@ -37,12 +40,10 @@ task = args.task
 data = args.data
 data_subtype = args.data_subtype
 
-ann_file = args.annotations or '%s/Annotations/%s%s_%s_annotations.json' % (
-    data_dir, version, data, data_subtype)
-ques_file = args.questions or '%s/Questions/%s%s_%s_%s_questions.json' % (
-    data_dir, version, task, data, data_subtype)
+ann_file = args.annotations or '{args.data_dir}/Annotations/{args.version}_{args.data}_{args.data_subtype}_annotations.json'.format(args=args)
+ques_file = args.questions or '{args.data_dir}/Questions/{args.version}_{args.task}_{args.data}_{args.data_subtype}_questions.json'.format(args=args)
 
-img_dir = args.image_dir or '%s/Images/%s/%s/' % (data_dir, data, data_subtype)
+img_dir = args.image_dir or '{args.data_dir}/Images/{args.data}/{args.data_subtype}/'.format(args=args)
 file_types = ['results', 'accuracy', 'evalQA', 'evalQuesType', 'evalAnsType']
 
 # An example result json file has been provided in './Results' folder.
